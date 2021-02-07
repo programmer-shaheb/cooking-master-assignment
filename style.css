@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #edd263;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.searchField {
+  height: 100px;
+  width: 800px;
+  margin: 0 auto;
+  position: relative;
+  top: 20px;
+  text-align: center;
+  padding: 10px 0;
+}
+
+#inputField {
+  height: 60px;
+  width: 500px;
+  outline: none;
+  border: none;
+  padding: 5px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.btn {
+  height: 60px;
+  width: 80px;
+  outline: none;
+  border: none;
+  padding: 5px;
+  background: rgb(46, 20, 77);
+  color: #ffffff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.foodList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 10px;
+  width: 100%;
+}
+
+.foodList div {
+  width: 270px;
+  height: 300px;
+  /* margin: 19px 0; */
+  background: #fff;
+  /* text-align: center; */
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.foodList div h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  font-size: 20px;
+}
+
+/* .foodDetail {
+  width: 644px;
+  height: 755px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.foodDetail img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.foodDetail li {
+  list-style-type: none;
+} */
