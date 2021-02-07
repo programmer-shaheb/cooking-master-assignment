@@ -1,5 +1,4 @@
 const apiURL = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
-
 const main = document.getElementById("foodList");
 
 function foodShow(url) {
@@ -8,17 +7,17 @@ function foodShow(url) {
     .then((data) => {
       data.meals.forEach((element) => {
         const div = document.createElement("div");
-
         div.setAttribute("onclick", "displayFoodDetail();");
 
         const image = document.createElement("img");
         image.src = element.strMealThumb;
+
         const text = document.createElement("h2");
         text.innerHTML = element.strMeal;
+
         div.appendChild(image);
         div.appendChild(text);
         main.appendChild(div);
-        // console.log(main);
       });
     });
 }
@@ -31,8 +30,10 @@ const displayFoodDetail = () => {
         const foodDetail = document.getElementById("foodDetail");
         const imageDetail = document.createElement("img");
         imageDetail.src = element.strMealThumb;
+
         const textDetail = document.createElement("h1");
         textDetail.innerHTML = element.strMeal;
+
         const ul = document.createElement("ul");
         const li1 = document.createElement("li");
         const li2 = document.createElement("li");
@@ -40,6 +41,7 @@ const displayFoodDetail = () => {
         const li4 = document.createElement("li");
         const li5 = document.createElement("li");
         const li6 = document.createElement("li");
+
         const listText1 = element.strMeasure1 + element.strIngredient1;
         const listText2 = element.strMeasure2 + element.strIngredient2;
         const listText3 = element.strMeasure3 + element.strIngredient3;
@@ -64,29 +66,19 @@ const displayFoodDetail = () => {
         ul.appendChild(li6);
         foodDetail.appendChild(ul);
 
-        foodDetail.style.width = "644px";
-        foodDetail.style.height = "644px";
+        foodDetail.style.width = "400px";
+        foodDetail.style.height = "450px";
         foodDetail.style.background = "#fff";
-
-        console.log(foodDetail);
-
-        //         const foodDetails = `
-        // <h1>${element.strMeal}</h1>
-        // `;
-        // foodDetail.innerHTML = foodDetails;
-
-        // console.log(foodDetail);
       });
     });
 };
 
-const btn = document
-  .getElementById("btn")
-  .addEventListener("click", function () {
-    let input = document.getElementById("inputField");
+const btn = document.getElementById("btn").addEventListener("click", () => {
+  let input = document.getElementById("inputField");
 
-    const inputValue = input.value;
-    foodShow(apiURL + inputValue);
-    // foodShow(apiURL);
-    input.value = "";
-  });
+  const inputValue = input.value;
+  const inputResult = apiURL + inputValue;
+
+  foodShow(inputResult);
+  input.value = "";
+});
