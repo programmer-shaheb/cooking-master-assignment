@@ -15,12 +15,12 @@
   </head>
   <body>
     <div class="container">
-      <div class="searchField">
-        <input id="inputField" type="text" placeholder="Search For Meal..." />
-        <button class="btn" id="btn">Search</button>
+      <div class="inputField">
+        <input id="searchField" type="text" placeholder="Search For Meal..." />
+        <button onclick="searchFood()" class="btn" id="btn">Search</button>
       </div>
       <div id="foodDetail" class="foodDetail"></div>
-      <main id="foodList" class="foodList"></main>
+      <main id="food-container"></main>
     </div>
 
     <!-- javascript file -->

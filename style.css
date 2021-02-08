@@ -14,17 +14,17 @@ body {
   height: 100vh;
 }
 
-.searchField {
+.inputField {
   height: 100px;
   width: 800px;
   margin: 0 auto;
   position: relative;
-  top: 20px;
+  top: 80px;
   text-align: center;
   padding: 10px 0;
 }
 
-#inputField {
+#searchField {
   height: 60px;
   width: 500px;
   outline: none;
@@ -35,11 +35,12 @@ body {
 }
 
 .btn {
-  height: 60px;
+  height: 65px;
   width: 80px;
   outline: none;
   border: none;
   padding: 5px;
+  font-size: 18px;
   background: rgb(46, 20, 77);
   color: #ffffff;
   border-radius: 10px;
@@ -52,9 +53,10 @@ body {
   grid-template-rows: repeat(2, 1fr);
   grid-gap: 10px;
   width: 100%;
+  margin: 100px 0 40px 0;
 }
 
-.foodList div {
+.foodList div .foodResize {
   width: 270px;
   height: 300px;
   margin: 19px 0;
