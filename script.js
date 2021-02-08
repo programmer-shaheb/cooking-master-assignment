@@ -10,15 +10,6 @@ const searchFood = () => {
     );
 };
 
-const errorMsg = (message) => {
-  const errorMessage = document.getElementById("errorMessage");
-  errorMessage.className = "error-msg";
-  errorMessage.innerHTML = "";
-  errorMessage.innerHTML = `
-<h2>${message}</h2>
-`;
-};
-
 const displayFoods = (foods) => {
   const foodContainer = document.getElementById("food-container");
   foodContainer.className = "foodList";
@@ -65,4 +56,13 @@ const foodDetails = (details) => {
   </div>  
     `;
   });
+};
+
+const errorMsg = (message) => {
+  const errorMessage = document.getElementById("errorMessage");
+  errorMessage.className = "error-msg";
+  errorMessage.innerHTML = "";
+  errorMessage.innerHTML = `
+<h2>${message}</h2>
+`;
 };
