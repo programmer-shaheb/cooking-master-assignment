@@ -5,9 +5,7 @@ const searchFood = () => {
   fetch(apiURL)
     .then((res) => res.json())
     .then((data) => displayFoods(data.meals))
-    .catch((error) =>
-      errorMsg("Something Went Wrong!! Please try again later!")
-    );
+    .catch((error) => errorMsg("Food Item Is Not Found !"));
 };
 
 const displayFoods = (foods) => {
@@ -19,8 +17,10 @@ const displayFoods = (foods) => {
     const foodDiv = document.createElement("div");
     foodDiv.innerHTML = `
     <div onclick='displayFoodDetail(${food.idMeal})' class='foodResize'>
+    <a href="#top">
     <img src='${food.strMealThumb}'>
     <h2>${food.strMeal}</h2>
+    </a>
     </div>
     `;
     foodContainer.appendChild(foodDiv);
@@ -60,8 +60,8 @@ const foodDetails = (details) => {
 
 const errorMsg = (message) => {
   const errorMessage = document.getElementById("errorMessage");
-  errorMessage.className = "error-msg";
   errorMessage.innerHTML = "";
+  errorMessage.className = "error-msg";
   errorMessage.innerHTML = `
 <h2>${message}</h2>
 `;
