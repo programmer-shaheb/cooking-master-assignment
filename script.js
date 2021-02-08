@@ -7,7 +7,7 @@ function foodShow(url) {
     .then((data) => {
       data.meals.forEach((element) => {
         const div = document.createElement("div");
-        div.setAttribute("onclick", "displayFoodDetail();");
+        div.setAttribute("onclick", `displayFoodDetail(${element.idMeal})`);
 
         const image = document.createElement("img");
         image.src = element.strMealThumb;
@@ -22,12 +22,16 @@ function foodShow(url) {
     });
 }
 
-const displayFoodDetail = () => {
-  fetch(apiURL)
+const displayFoodDetail = (number) => {
+  const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${number}`;
+
+  fetch(url)
     .then((res) => res.json())
     .then((data) => {
       data.meals.forEach((element) => {
         const foodDetail = document.getElementById("foodDetail");
+        foodDetail.innerHTML = "";
+
         const imageDetail = document.createElement("img");
         imageDetail.src = element.strMealThumb;
 
