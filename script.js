@@ -1,4 +1,12 @@
 const searchFood = () => {
+  const errorMessage = document.getElementById("errorMessage");
+  errorMessage.innerHTML = "";
+  errorMessage.className = "";
+
+  const foodDetailDiv = document.getElementById("foodDetail");
+  foodDetailDiv.className = "";
+  foodDetailDiv.innerHTML = "";
+
   const searchText = document.getElementById("searchField").value;
   const apiURL = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
 
@@ -11,7 +19,7 @@ const searchFood = () => {
 const displayFoods = (foods) => {
   const foodContainer = document.getElementById("food-container");
   foodContainer.className = "foodList";
-  foodContainer.innerHTML = "";
+  foodContainer.innerHTML = null;
 
   foods.forEach((food) => {
     const foodDiv = document.createElement("div");
@@ -38,7 +46,6 @@ const foodDetails = (details) => {
   details.forEach((detail) => {
     const foodDetailDiv = document.getElementById("foodDetail");
     foodDetailDiv.className = "foodDetail";
-    foodDetailDiv.innerHTML = "";
 
     foodDetailDiv.innerHTML = `
   <div class="detailsInfo">
@@ -60,7 +67,6 @@ const foodDetails = (details) => {
 
 const errorMsg = (message) => {
   const errorMessage = document.getElementById("errorMessage");
-  errorMessage.innerHTML = "";
   errorMessage.className = "error-msg";
   errorMessage.innerHTML = `
 <h2>${message}</h2>
